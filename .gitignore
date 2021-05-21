@@ -76,3 +76,4 @@ bower_components/
 site/
 /static/
 settings_local.old.py
+.vscode
