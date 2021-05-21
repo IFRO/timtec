@@ -78,3 +78,4 @@ site/
 settings_local.old.py
 .vscode
 webfiles
+ghostdriver.log
