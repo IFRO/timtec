@@ -77,3 +77,4 @@ site/
 /static/
 settings_local.old.py
 .vscode
+webfiles
