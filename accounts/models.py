@@ -55,10 +55,10 @@ class AbstractTimtecUser(AbstractBaseUser, PermissionsMixin):
 
     def get_picture_url(self):
         if not self.picture:
-            location = "/%s/%s" % (settings.STATIC_URL, 'img/avatar-default.png')
+            from django.templatetags.static import static
+            return static('img/avatar-default.png')
         else:
-            location = "/%s/%s" % (settings.MEDIA_URL, self.picture)
-        return re.sub('/+', '/', location)
+            return self.picture.url
 
     def get_full_name(self):
         full_name = '%s %s' % (self.first_name, self.last_name)

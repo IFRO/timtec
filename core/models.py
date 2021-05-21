@@ -511,8 +511,7 @@ class CourseProfessor(models.Model):
 
     def get_picture_url(self):
         if self.picture:
-            location = "/%s/%s" % (settings.MEDIA_URL, self.picture)
-            return re.sub('/+', '/', location)
+            return self.picture.url
         elif self.user:
             return self.user.get_picture_url()
 
@@ -567,8 +566,7 @@ class CourseAuthor(models.Model):
 
     def get_picture_url(self):
         if self.picture:
-            location = "/%s/%s" % (settings.MEDIA_URL, self.picture)
-            return re.sub('/+', '/', location)
+            return self.picture.url
         elif self.user:
             return self.user.get_picture_url()
 

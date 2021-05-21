@@ -44,7 +44,7 @@ class Activity(models.Model):
 
     def get_image_url(self):
         if self.image:
-            return '{}/{}'.format(settings.MEDIA_URL, self.image)
+            return self.image.url
         return ''
 
     def __unicode__(self):
